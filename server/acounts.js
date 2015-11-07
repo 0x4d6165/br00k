@@ -1,0 +1,3 @@
+Acounts.config({
+    sendVerificationEmail = true;
+})
