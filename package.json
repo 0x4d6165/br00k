@@ -1,5 +1,6 @@
 {
-  "name": "a-stream-of-consciousness-style-message-board",
+  "name": "br00k",
+  "description": "a-stream-of-consciousness-style-message-board",
   "version": "0.0.1",
   "author": "Logan Saunders",
   "dependencies": {

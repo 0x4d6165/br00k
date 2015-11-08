@@ -1,6 +1,6 @@
 {
-    "isDev": true,
-    "isSecure": false,
+    "isDev": false,
+    "isSecure": true,
     "session": {
         "host": "localhost",
         "port": 6379,
@@ -13,7 +13,7 @@
         "port": 3000
     },
     "client": {
-        "apiUrl": "http://localhost:3000",
-        "debugMode": true
+        "apiUrl": "http://br00k.co",
+        "debugMode": false
     }
 }
