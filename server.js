@@ -81,8 +81,8 @@ app.use(function (req, res, next) {
 // ---------------------------------------------------
 new Moonboots({
     moonboots: {
-        jsFileName: 'a-stream-of-consciousness-style-message-board',
-        cssFileName: 'a-stream-of-consciousness-style-message-board',
+        jsFileName: 'br00k',
+        cssFileName: 'br00k',
         main: fixPath('client/app.js'),
         developmentMode: config.isDev,
         libraries: [
