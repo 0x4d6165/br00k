@@ -10,7 +10,7 @@
     },
     "http": {
         "listen": "localhost",
-        "port": 3000
+        "port": 80
     },
     "client": {
         "apiUrl": "http://br00k.co",
