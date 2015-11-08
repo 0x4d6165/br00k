@@ -1,7 +1,7 @@
 {
   "name": "br00k",
   "description": "a-stream-of-consciousness-style-message-board",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "author": "Logan Saunders",
   "dependencies": {
     "ampersand-app": "^1.0.0",
