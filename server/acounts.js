@@ -1,3 +1,0 @@
-Acounts.config({
-    sendVerificationEmail = true;
-})
