@@ -2,18 +2,18 @@
     "isDev": false,
     "isSecure": true,
     "session": {
-        "host": "br00k.co",
+        "host": "localhost",
         "port": 6379,
         "db": 1,
         "secret": "bang!",
         "secure": true
     },
     "http": {
-        "listen": "br00k.co",
+        "listen": "localhost",
         "port": 3000
     },
     "client": {
-        "apiUrl": "http://br00k.co",
+        "apiUrl": "http://localhost",
         "debugMode": false
     }
 }
