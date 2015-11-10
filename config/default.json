@@ -2,14 +2,14 @@
     "isDev": false,
     "isSecure": true,
     "session": {
-        "host": "localhost",
+        "host": "br00k.co",
         "port": 6379,
         "db": 1,
         "secret": "bang!",
         "secure": true
     },
     "http": {
-        "listen": "localhost",
+        "listen": "br00k.co",
         "port": 3000
     },
     "client": {
