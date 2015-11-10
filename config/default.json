@@ -10,7 +10,7 @@
     },
     "http": {
         "listen": "localhost",
-        "port": 3000
+        "port": "{{env 'PORT'}}"
     },
     "client": {
         "apiUrl": "http://localhost:3000",
