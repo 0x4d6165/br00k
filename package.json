@@ -1,7 +1,6 @@
 {
-  "name": "br00k",
-  "description": "a-stream-of-consciousness-style-message-board",
-  "version": "0.0.0",
+  "name": "es6ified-ampersand",
+  "version": "0.0.1",
   "author": "Logan Saunders",
   "dependencies": {
     "ampersand-app": "^1.0.0",
@@ -15,6 +14,8 @@
     "ampersand-view-switcher": "^2.0.0",
     "andlog": "^1.0.0",
     "async": "^0.9.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.2.0",
     "body-parser": "^1.4.3",
     "clientconfig": "^1.0.0",
     "compression": "^1.0.8",
@@ -43,9 +44,13 @@
     "indent": 4,
     "loopfunc": true,
     "node": true,
+    "esnext": true,
     "trailing": true,
     "undef": true,
     "white": true
+  },
+  "babel": {
+    "presets": ["es2015"]
   },
   "main": "server.js"
 }

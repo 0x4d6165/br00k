@@ -1,6 +1,5 @@
-var Collection = require('ampersand-rest-collection');
-var Person = require('./person');
-
+import Collection from 'ampersand-rest-collection';
+import Person from './person';
 
 module.exports = Collection.extend({
     model: Person,

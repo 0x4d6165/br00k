@@ -1,61 +1,60 @@
-var app = require('ampersand-app');
-var Router = require('ampersand-router');
-var HomePage = require('./pages/home');
-var CollectionDemo = require('./pages/collection-demo');
-var InfoPage = require('./pages/info');
-var PersonAddPage = require('./pages/person-add');
-var PersonEditPage = require('./pages/person-edit');
-var PersonShowPage = require('./pages/person-show');
-
+import app from 'ampersand-app';
+import Router from 'ampersand-router';
+import HomePage from './pages/home';
+import CollectionDemo from './pages/collection-demo';
+import InfoPage from './pages/info';
+import PersonAddPage from './pages/person-add';
+import PersonEditPage from './pages/person-edit';
+import PersonShowPage from './pages/person-show';
 
 module.exports = Router.extend({
-    routes: {
-        '': 'home',
-        'collections': 'collectionDemo',
-        'info': 'info',
-        'person/add': 'personAdd',
-        'person/:id': 'personView',
-        'person/:id/edit': 'personEdit',
-        '(*path)': 'catchAll'
-    },
+  routes: {
+    '': 'home',
+    'collections': 'collectionDemo',
+    'info': 'info',
+    'person/add': 'personAdd',
+    'person/:id': 'personView',
+    'person/:id/edit': 'personEdit',
+    '(*path)': 'catchAll'
+  },
 
-    // ------- ROUTE HANDLERS ---------
-    home: function () {
-        app.trigger('page', new HomePage({
-            model: app.me
-        }));
-    },
+  // ------- ROUTE HANDLERS ---------
+  home() {
+    app.trigger('page', new HomePage({
+      model: app.me
+    }));
+  },
 
-    collectionDemo: function () {
-        app.trigger('page', new CollectionDemo({
-            model: app.me,
-            collection: app.people
-        }));
-    },
+  collectionDemo() {
+    app.trigger('page', new CollectionDemo({
+      model: app.me,
+      collection: app.people
+    }));
+  },
 
-    info: function () {
-        app.trigger('page', new InfoPage({
-            model: app.me
-        }));
-    },
+  info() {
+    app.trigger('page', new InfoPage({
+      model: app.me
+    }));
+  },
 
-    personAdd: function () {
-        app.trigger('page', new PersonAddPage());
-    },
+  personAdd() {
+    app.trigger('page', new PersonAddPage());
+  },
 
-    personEdit: function (id) {
-        app.trigger('page', new PersonEditPage({
-            id: id
-        }));
-    },
+  personEdit(id) {
+    app.trigger('page', new PersonEditPage({
+      id: id
+    }));
+  },
 
-    personView: function (id) {
-        app.trigger('page', new PersonShowPage({
-            id: id
-        }));
-    },
+  personView(id) {
+    app.trigger('page', new PersonShowPage({
+      id: id
+    }));
+  },
 
-    catchAll: function () {
-        this.redirectTo('');
-    }
+  catchAll() {
+    this.redirectTo('');
+  }
 });

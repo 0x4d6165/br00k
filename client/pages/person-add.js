@@ -1,29 +1,28 @@
-var app = require('ampersand-app');
-var PageView = require('./base');
-var templates = require('../templates');
-var PersonForm = require('../forms/person');
-
+import app from 'ampersand-app';
+import PageView from './base';
+import templates from '../templates';
+import PersonForm from '../forms/person';
 
 module.exports = PageView.extend({
-    pageTitle: 'add person',
-    template: templates.pages.personAdd,
-    subviews: {
-        form: {
-            container: 'form',
-            prepareView: function (el) {
-                return new PersonForm({
-                    el: el,
-                    submitCallback: function (data) {
-                        app.people.create(data, {
-                            wait: true,
-                            success: function () {
-                                app.navigate('/collections');
-                                app.people.fetch();
-                            }
-                        });
-                    }
-                });
-            }
-        }
+  pageTitle: 'add person',
+  template: templates.pages.personAdd,
+  subviews: {
+    form: {
+      container: 'form',
+      prepareView(el) {
+        return new PersonForm({
+          el: el,
+          submitCallback(data) {
+            app.people.create(data, {
+              wait: true,
+              success() {
+                app.navigate('/collections');
+                app.people.fetch();
+              }
+            });
+          }
+        });
+      }
     }
+  }
 });

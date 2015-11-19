@@ -1,42 +1,43 @@
 /*global alert*/
-var app = require('ampersand-app');
-var PageView = require('./base');
-var templates = require('../templates');
-var PersonForm = require('../forms/person');
-
+import app from 'ampersand-app';
+import PageView from './base';
+import templates from '../templates';
+import PersonForm from '../forms/person';
 
 module.exports = PageView.extend({
-    pageTitle: 'edit person',
-    template: templates.pages.personEdit,
-    initialize: function (spec) {
-        var self = this;
-        app.people.getOrFetch(spec.id, {all: true}, function (err, model) {
-            if (err) alert('couldnt find a model with id: ' + spec.id);
-            self.model = model;
+  pageTitle: 'edit person',
+  template: templates.pages.personEdit,
+  initialize(spec) {
+    const self = this;
+    app.people.getOrFetch(spec.id, {
+      all: true
+    }, (err, model) => {
+      if (err) alert('couldnt find a model with id: ' + spec.id);
+      self.model = model;
+    });
+  },
+  subviews: {
+    form: {
+      // this is the css selector that will be the `el` in the
+      // prepareView function.
+      container: 'form',
+      // this says we'll wait for `this.model` to be truthy
+      waitFor: 'model',
+      prepareView(el) {
+        const model = this.model;
+        return new PersonForm({
+          el: el,
+          model: this.model,
+          submitCallback(data) {
+            model.save(data, {
+              wait: true,
+              success() {
+                app.navigate('/collections');
+              }
+            });
+          }
         });
-    },
-    subviews: {
-        form: {
-            // this is the css selector that will be the `el` in the
-            // prepareView function.
-            container: 'form',
-            // this says we'll wait for `this.model` to be truthy
-            waitFor: 'model',
-            prepareView: function (el) {
-                var model = this.model;
-                return new PersonForm({
-                    el: el,
-                    model: this.model,
-                    submitCallback: function (data) {
-                        model.save(data, {
-                            wait: true,
-                            success: function () {
-                                app.navigate('/collections');
-                            }
-                        });
-                    }
-                });
-            }
-        }
+      }
     }
+  }
 });

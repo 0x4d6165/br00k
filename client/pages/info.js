@@ -1,8 +1,7 @@
-var PageView = require('./base');
-var templates = require('../templates');
-
+import PageView from './base';
+import templates from '../templates';
 
 module.exports = PageView.extend({
-    pageTitle: 'more info',
-    template: templates.pages.info
+  pageTitle: 'more info',
+  template: templates.pages.info
 });
